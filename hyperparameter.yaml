@@ -1,0 +1,10 @@
+PreProcess:
+  val_ratio: 0.2
+  buffer_size: 1000
+  batch_size: 32
+  img_width: 180
+  img_height: 180
+  
+Train:
+  epochs: 10
+  lr: 1e-3
