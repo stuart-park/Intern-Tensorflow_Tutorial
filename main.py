@@ -1,7 +1,6 @@
 import tensorflow as tf
 import time
 import yaml
-import argparse
 
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -9,11 +8,11 @@ from tensorflow.keras import layers
 import data_augmentation
 import data_preprocessing
 import data_generator
-#import VGG_model
-import basic_model
+import models
 #import train_func
 import train_class
 import validate
+import argparse
 
 
 def parse_args():
@@ -102,15 +101,34 @@ def main():
     ### Build model ###
 
     num_classes = len(class_names)
-    build_model = basic_model.build_model(num_classes)
     """
-    build_model=VGG16_model.build_VGG16(num_classes)
+    build_model = models.build_VGG16(num_classes, preprocess_param["img_width"], preprocess_param["img_height"])
     """
+
+    """
+    build_model = models.build_model(num_classes, preprocess_param['img_width'],
+                                     preprocess_param['img_height'])
+    build_model=build_model.vgg16()
+    build_model.summary()
+    """
+
+    build_model=models.pretrained_model(num_classes, preprocess_param["img_width"], preprocess_param["img_height"])
+    build_model.summary()
 
     ### Train and Validate model ###
 
     epochs = train_param['epochs']
 
+    # Train model by fit
+
+    adam = keras.optimizers.Adam(learning_rate=float(train_param['lr']))
+    build_model.compile(optimizer=adam,
+                        loss=tf.keras.losses.SparseCategoricalCrossentropy(
+                            from_logits=False),
+                        metrics=["accuracy"])
+    build_model.fit(aug_train_ds, validation_data=val_ds, epochs=epochs)
+
+    """
     # Train model by class
     model_train = train_class.train_model(build_model,
                                           preprocess_param['batch_size'],
@@ -122,6 +140,8 @@ def main():
         model_train.train_one_epoch(aug_train_ds)
         validate.validate_one_epoch(val_ds, build_model)
         print("Time taken %.2fs" % (time.time()-start_time))
+    
+    """
 
     """
     #Trian model by function

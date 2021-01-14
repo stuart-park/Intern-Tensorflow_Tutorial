@@ -2,12 +2,11 @@ import tensorflow as tf
 
 from tensorflow import keras
 
+
 train_acc_metric=keras.metrics.SparseCategoricalAccuracy()
-optimizer=keras.optimizers.Adam(learning_rate=1e-3)
-loss_fn=keras.losses.SparseCategoricalCrossentropy(from_logits=True)
-    
+      
 @tf.function
-def train_step(model, image, label):
+def train_step(model, image, label, optimizer, loss_fn):
     with tf.GradientTape() as tape:
         logits=model(image, training=True)
         loss_value=loss_fn(label, logits)
@@ -17,9 +16,9 @@ def train_step(model, image, label):
     
     return loss_value
 
-def train_one_epoch(ds, model, batch_size=32):
+def train_one_epoch(ds, model, batch_size, optimizer, loss_fn):
     for step, (image, label) in enumerate(ds):
-        loss_value=train_step(model, image, label)
+        loss_value=train_step(model, image, label, optimizer, loss_fn)
         
         if step % 10==0:
             print("Training loss (for one batch) at step %d: %.4f" % (step, float(loss_value)))

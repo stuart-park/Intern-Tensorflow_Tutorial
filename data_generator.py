@@ -3,7 +3,6 @@ Data Generator
 """
 import numpy as np
 import pathlib
-import os
 import tensorflow as tf
 
 class data_generator:
@@ -16,7 +15,7 @@ class data_generator:
         self.image_count=len(list(self.data_dir.glob("*/*.jpg")))
         self.val_ratio=val_ratio
 
-    def data_label_split(self):
+    def _data_label_split(self):
         list_ds=tf.data.Dataset.list_files(str(self.data_dir/"*/*"), shuffle=False)
         list_ds=list_ds.shuffle(self.image_count, reshuffle_each_iteration=False)
     
@@ -24,7 +23,7 @@ class data_generator:
     
         return list_ds, class_names
     
-    def train_val_split(self, list_ds):
+    def _train_val_split(self, list_ds):
         val_size=int(self.image_count*self.val_ratio)
         train_ds=list_ds.skip(val_size)
         val_ds=list_ds.take(val_size)
@@ -32,8 +31,8 @@ class data_generator:
         return train_ds, val_ds
 
     def generate_data(self):
-        list_ds, class_names=self.data_label_split()
-        train_ds, val_ds=self.train_val_split(list_ds)
+        list_ds, class_names=self._data_label_split()
+        train_ds, val_ds=self._train_val_split(list_ds)
         
         return train_ds, val_ds, class_names
     

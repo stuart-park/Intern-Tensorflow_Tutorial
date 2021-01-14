@@ -21,7 +21,7 @@ class data_preprocessor:
         self.img_height = img_height
         self.AUTOTUNE = tf.data.experimental.AUTOTUNE
 
-    def process_path(self, file_path):
+    def _process_path(self, file_path):
         parts = tf.strings.split(file_path, os.path.sep)
         one_hot = parts[-2] == self.class_names
         label = tf.argmax(one_hot)
@@ -32,13 +32,13 @@ class data_preprocessor:
 
         return img, label
 
-    def convert_dataset(self, ds):
+    def _convert_dataset(self, ds):
         converted_ds = ds.map(
-            self.process_path, num_parallel_calls=self.AUTOTUNE)
+            self._process_path, num_parallel_calls=self.AUTOTUNE)
         
         return converted_ds
 
-    def configure_data(self, ds):
+    def _configure_data(self, ds):
         ds = ds.cache()
         ds = ds.shuffle(buffer_size=self.buffer_size)
         ds = ds.batch(self.batch_size)
@@ -46,7 +46,7 @@ class data_preprocessor:
 
         return ds
 
-    def rescale_dataset(self, ds):
+    def _rescale_dataset(self, ds):
         normalization_layer = layers.experimental.preprocessing.Rescaling(
             1./255)
         normalized_ds = ds.map(lambda x, y: (normalization_layer(x), y))
@@ -54,8 +54,8 @@ class data_preprocessor:
         return normalized_ds
 
     def build_data(self, ds):
-        convert_ds = self.convert_dataset(ds)
-        configure_ds = self.configure_data(convert_ds)
-        final_ds = self.rescale_dataset(configure_ds)
+        convert_ds = self._convert_dataset(ds)
+        configure_ds = self._configure_data(convert_ds)
+        final_ds = self._rescale_dataset(configure_ds)
 
         return final_ds
