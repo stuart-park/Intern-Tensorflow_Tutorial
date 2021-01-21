@@ -1,9 +1,11 @@
 # Tutorial
 
-## Overview
+### Overview
 Following tutorial guides on tensorflow in jupyter notebook and modular programming via vscode
 
-## Daily Log
+### Code Description
+
+### Daily Log
 + 
 +
 
@@ -15,6 +17,7 @@ Following tutorial guides on tensorflow in jupyter notebook and modular programm
 
 2. Objective: To classify each cassava image into four disease categories or a fifth category indicating a healthy leaf
 
+## Code Description
 
 ## Daily Log
 + 
