@@ -1,6 +1,6 @@
 # 개발일지
 + **10 / 15 (FRI)**  
-Tutorial을 통해 생성한 baseline code 에서 pretrained model을 `VGG16`에서 `EfficientNetB3`로 변경하고 학습을 진행시켜지만 OOM(Out Of Memory) 에러 발생
+Tutorial을 통해 생성한 baseline code 에서 pretrained model을 `VGG16`에서 `EfficientNetB3`로 변경하고 학습을 진행시지만 OOM(Out Of Memory) 에러 발생
 + **10 / 18 (MON)**<br>
 OOM 에러의 원인을 찾다 보니 파일 디렉토리를 통해 이미지를 읽으들어온뒤 shuffle의 buffer size를 학습 데이터 크기인 20000으로 정하였기 때문. 데이터 파일 디렉토리로만 이루어져 있으면 문제가 없었지만 directory를 통해 이미지를 불러와서 array로 만들었기 때문에 shuffle의 buffer size를 1000으로 수정하니 모델이 학습이 되었다. 이렇게 학습된 모델을 통해 submit을 하려고 보니 본 대회는 code competition이라 코드를 제출하였는데 notebook timeout 에러 발생
 + **10 / 19 (TUE)**<br>
