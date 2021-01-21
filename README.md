@@ -1,11 +1,13 @@
 # Tutorial
 
-### Overview
+## Overview
 Following tutorial guides on tensorflow in jupyter notebook and modular programming via vscode
 
-### Code Description
+## Code Description
 
-### Daily Log
+## Results
+
+## Daily Log
 + 
 +
 
