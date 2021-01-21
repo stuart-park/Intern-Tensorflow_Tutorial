@@ -8,5 +8,5 @@ notebook timeout에러 발생 해결을 위해 Kaggle을 찾아보니 code Compe
 + **10 / 20 (WED)**<br>
 0점 원인을 계속 찾다보니까 inference 부분에서 출력층의 activation function이 softmax이다 보니 `predict()`에서 argmax를 붙여줬는데 jupyter에서 찍어보니 각 사진에 대한 것이 아닌 전체 데이터셋에 대한 argmax가 나온것이었다. 결국 test data에서 이미지를 한장씩 불러와서 예측하도록 코드를 수정하였고 그 결과 0.76 정도가 나옴. 결과를 향상시키기 위해 EfficinetB3 모델에서 learning rate, epoch, resolution(img_size) 등의 hyper parameter를 수정하여 학습시켰지만 0.78을 모두 넘지 못하였음. 
 + **10 / 21 (THU)**<br>
-EfficientNetB3에서의 HyperParameter(resolution, lr, batch_size)를 바꿔가며 학습을 하였지만 val_acc가 0.78을 넘지 못함. 원인은 base_model을 freeze 시켜놓고 classifier부분만 학습을 시켜 Transfer Learning을 진행하였기 때문이었음. base model를 unfreeze시키고 모든 layer의 weight를 다시 학습(lr=1e-3, epochs=10)시켜 Fine-Tuning을 진행한 결과 val_acc가 0.81 정도로 향상되었음. Fine-Tuning시 learning rate을 낮게 잡지 않으면 빠르게 overfitting이 될 수 있기 때문에 lr을 낮게 잡고 sceduling을 시켜야겠다. 
+EfficientNetB3에서의 HyperParameter(resolution, lr, batch_size)를 바꿔가며 학습을 하였지만 val_acc가 0.78을 넘지 못함. 원인은 base_model을 freeze 시켜놓고 classifier부분만 학습을 시켜 Transfer Learning을 진행하였기 때문이었음. base model를 unfreeze시키고 모든 layer의 weight를 다시 학습(lr=1e-3, epochs=10)시켜 Fine-Tuning을 진행한 결과 val_acc가 0.81 정도로 향상되었음. 하지만 학습시간은 매우 길어짐. Fine-Tuning시 learning rate을 낮게 잡지 않으면 빠르게 overfitting이 될 수 있기 때문에 lr을 낮게 잡고 sceduling을 시켜야겠다. 
 + **10 / 22 (FRI)** <br>
