@@ -15,3 +15,5 @@ Following tutorial guides on tensorflow in jupyter notebook and modular programm
 **Objective:** To classify each cassava image into four disease categories or a fifth category indicating a healthy leaf
 
 ## Description
+
+## Results & Improvements
