@@ -1,10 +1,13 @@
 # Tutorial
+
 ## Overview
 Following tutorial guides on tensorflow in jupyter notebook and modular programming via vscode
 
 ## Daily Log
 + 
 +
+
+* * *
 
 # Kaggle Competition
 ## Overview
