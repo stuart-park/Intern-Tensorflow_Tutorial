@@ -11,9 +11,8 @@ Following tutorial guides on tensorflow in jupyter notebook and modular programm
 
 # Kaggle Competition
 ## Overview
-1. Competition: Cassava Leaf Diease Classification
-
-2. Objective: To classify each cassava image into four disease categories or a fifth category indicating a healthy leaf
+**Competition:** Cassava Leaf Diease Classification <br>
+**Objective:** To classify each cassava image into four disease categories or a fifth category indicating a healthy leaf
 
 ## Code Description
 
