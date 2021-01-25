@@ -1,11 +1,21 @@
 # Tutorial
 
 ## Overview
-Following tutorial guides on tensorflow in jupyter notebook and modular programming via vscode
++ Tensorflow 사이트 내 Image Classification Tutorial과 함께, Data Augmentation, Transfer Learning, Keras Guide 등의 Advanced 한 내용에 대한 이해
++ 진행할 Kaggle Competition을 위한 Baseline 코드 작성
 
 ## Description
-+ Tutorial.ipynb: Code in image classification for tutorial. Used tf.data instead of from_directory. 
-+ Tutorial file: Modulizing jupyter code into it's function. Create class by it's function and initialize it. Also I created a parser for yaml file to easily manipulate some hyper parameters in model. Also I tried 3 kind of model traning. One is using 'fit()' API in keras. The other two is using customized fit, each is made with a class and a function. There was no big difference in training time, but 'fit()' API was more easy to use. 
++ **Tutorial.ipynb :** Jupyter notebook을 이용하여 Tensorflow 사이트 내 Image Classification에 대한 Tutorial로 Basic CNN model을 이용하여 Flower 데이터를 학습하고 Overfitting을 피하기 위한 Data Augmentation 진행.    
++ **Tutorial file :** 코드를 이해하기 위해 Jupyter notebook을 이용하여 한줄씩 작성하였다면 모델 학습 과정을 기능별로 묶는 Modular Programming을 진행. 각 Module에 대한 Description은 아래 같음
+  + hyperparameter.yaml: 
+  + data_generator.py: 
+  + data_preprocessor.py: 
+  + data_augmentation.py: 
+  + models.py: 
+  + train_class.py:
+  + train_func.py:
+  + validate.py: 
+  + main.py
 
 * * *
 
