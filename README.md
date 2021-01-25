@@ -6,7 +6,7 @@
 
 ## Description
 + **Tutorial.ipynb :** Jupyter notebook을 이용하여 Tensorflow 사이트 내 Image Classification에 대한 Tutorial로 Basic CNN model을 이용하여 Flower 데이터를 학습하고 Overfitting을 피하기 위한 Data Augmentation 진행.    
-+ **Tutorial file :** 코드를 이해하기 위해 Jupyter notebook을 이용하여 한줄씩 작성하였다면 모델 학습 과정을 기능별로 묶는 Modular Programming을 진행하고, 여러 변수들을 용이하게 조절하기 위한 yaml 파일 생성. 각 Module에 대한 Description은 아래 같음.
++ **Tutorial file :** 코드를 이해하기 위해 Jupyter notebook을 이용하여 한줄씩 작성하였다면 모델 학습 과정을 기능별로 묶는 Modular Programming을 진행하고, 여러 변수들을 용이하게 조절하기 위한 yaml 파일 생성. 각 Module에 대한 기능은 아래 같음.
   + hyperparameter.yaml: 여러 Hyperparameter 값 조절.
   + data_generator.py: Train Data를 불러와 Train Data와 Validation Data로 나눈뒤 Image Decoding 실행. 
   + data_preprocessor.py: 0~255 범위의 RGB 값들을 신경망 학습을 위해 Standardize. 또한 Performance 향상을 위한 Data configuration 진행
