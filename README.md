@@ -21,6 +21,7 @@
 
 # Kaggle Competition
 ## Overview
+![cassava](https://user-images.githubusercontent.com/53407163/105679077-4a543180-5f31-11eb-8e5a-a9401771de3c.JPG)
 **Competition:** Cassava Leaf Diease Classification <br>
 **Objective:** To classify each cassava image into four disease categories or a fifth category indicating a healthy leaf
 
