@@ -12,8 +12,8 @@
   + data_preprocessor.py: 0~255 범위의 RGB 값들을 신경망 학습을 위해 Standardize. 또한 Performance 향상을 위한 Data configuration 진행
   + data_augmentation.py: Overfitting을 방지하기 위해 데이터를 Augmentate.
   + models.py: 학습을 위한 Basic Model과 Transfer Learning을 위해 Pretrained Model인 VGG16 모델을 생성.
-  + train_class.py: Keras내 fit() API를 이용하지 않고 직접 class로 customize.
-  + train_func.py: 위와 동일하게 직접 fit() API를 직접 customize 했지만 위와 다르게 function으로 customize.
+  + train_class.py: Keras내 `fit()` API를 이용하지 않고 직접 class로 customize.
+  + train_func.py: 위와 동일하게 직접 `fit()` API를 직접 customize 했지만 위와 다르게 function으로 customize.
   + validate.py: 학습된 모델의 성능을 평가.
   + main.py: 생성한 모든 Module을 불러와 데이터를 이용하여 모델을 학습시킴.
 
