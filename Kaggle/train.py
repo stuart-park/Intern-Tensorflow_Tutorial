@@ -11,10 +11,6 @@ import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras import layers
 
-config = tf.compat.v1.ConfigProto()
-config.gpu_options.allow_growth = True
-session = tf.compat.v1.Session(config=config)
-
 AUTOTUNE = tf.data.experimental.AUTOTUNE
 
 
