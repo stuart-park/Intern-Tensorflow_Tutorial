@@ -100,8 +100,7 @@ def main():
     """
     # Load Basic Model
     model = models.basic_model(num_classes)
-    """
-    """
+    
     # Load Model with class
     model = models.build_model(num_classes, preprocess_param['img_width'],
                                  preprocess_param['img_height']).vgg16()
@@ -135,11 +134,7 @@ def main():
         validate.validate_one_epoch(val_ds, build_model)
         print("Time taken %.2fs" % (time.time()-start_time))
     
-    """
-
-    """
-    #Trian model by function
-    
+    # Train model by function
     optimizer=keras.optimizers.Adam(learning_rate=float(train_param['lr']))
     loss_fn=keras.losses.SparseCategoricalCrossentropy(from_logits=True)
     
