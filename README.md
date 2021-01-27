@@ -5,8 +5,8 @@
 + 진행할 Kaggle Competition을 위한 Baseline 코드 작성.
 
 ## Description
-+ **Tutorial.ipynb :** Jupyter Notebook을 이용하여 Tensorflow 사이트 내 Image Classification에 대한 Tutorial 진행. 본 Tutorial에서는 Basic CNN model을 이용하여 Flower 데이터를 학습하고 Overfitting을 피하기 위한 Data Augmentation 진행.    
-+ **Tutorial file :** VSCode를 이용하여 Jupyter Notebook에서 작성한 코드를 기능별로 묶는 Modular Programming을 진행하고, 여러 변수들을 용이하게 조절하기 위한 yaml 파일 생성, VGG16을 이용한 Transfer Learning, `GradientTape()`를 이용한 `fit()` API의 구현 등을 진행. 
++ **Tutorial_Jupyter :** Jupyter Notebook을 이용하여 Tensorflow 사이트 내 Image Classification에 대한 Tutorial 진행. 본 Tutorial에서는 Basic CNN model을 이용하여 Flower 데이터를 학습하고 Overfitting을 피하기 위한 Data Augmentation 진행.    
++ **Tutorial_VSCode :** VSCode를 이용하여 Jupyter Notebook에서 작성한 코드를 기능별로 묶는 Modular Programming을 진행하고, 여러 변수들을 용이하게 조절하기 위한 yaml 파일 생성, VGG16을 이용한 Transfer Learning, `GradientTape()`를 이용한 `fit()` API의 구현 등을 진행. 
   + hyperparameter.yaml : Hyperparameter 값 조절.
   + data_generator.py : 학습할 Data들의 File Path에 대한 Dataset을 만들고, Train Data와 Validation Data로 split 시킴. 
   + data_preprocessor.py : `map()` API를 이용하여 File Path에 대한 데이터를 (Image, Label) 쌍으로 변환, Image의 Rescaling, Performance 향상을 위한 Data configuration 진행.
