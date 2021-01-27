@@ -62,7 +62,6 @@ def parse_args():
 def main():
 
     ### Parse hyperparameter ###
-
     args = parse_args()
 
     with open(args.yaml_file) as file:
@@ -72,7 +71,6 @@ def main():
     train_param = hyper_param['Train']
 
     ### Get Data ###
-
     data_url = "https://storage.googleapis.com/download.tensorflow.org/example_images/flower_photos.tgz"
     val_ratio = preprocess_param['val_ratio']
 
@@ -85,7 +83,6 @@ def main():
           (tf.data.experimental.cardinality(val_ds).numpy(), ))
 
     ### Preprocess Data ###
-
     preprocess = data_preprocessing.data_preprocessor(class_names,
                                                       preprocess_param['batch_size'],
                                                       preprocess_param['buffer_size'],
@@ -95,38 +92,35 @@ def main():
     val_ds = preprocess.build_data(val_ds)
 
     ### Data augmentation ###
-
-    aug_train_ds = data_augmentation.augmentate_data(train_ds)
+    train_ds = data_augmentation.augmentate_data(train_ds)
 
     ### Build model ###
-
     num_classes = len(class_names)
-    """
-    build_model = models.build_VGG16(num_classes, preprocess_param["img_width"], preprocess_param["img_height"])
-    """
 
     """
-    build_model = models.build_model(num_classes, preprocess_param['img_width'],
-                                     preprocess_param['img_height'])
-    build_model=build_model.vgg16()
-    build_model.summary()
+    # Load Basic Model
+    model = models.basic_model(num_classes)
+    """
+    """
+    # Load Model with class
+    model = models.build_model(num_classes, preprocess_param['img_width'],
+                                 preprocess_param['img_height']).vgg16()
     """
 
-    build_model=models.pretrained_model(num_classes, preprocess_param["img_width"], preprocess_param["img_height"])
-    build_model.summary()
+    model = models.vgg16(
+        num_classes, preprocess_param["img_width"], preprocess_param["img_height"])
+    model.summary()
 
     ### Train and Validate model ###
-
     epochs = train_param['epochs']
 
     # Train model by fit
-
     adam = keras.optimizers.Adam(learning_rate=float(train_param['lr']))
-    build_model.compile(optimizer=adam,
-                        loss=tf.keras.losses.SparseCategoricalCrossentropy(
-                            from_logits=False),
-                        metrics=["accuracy"])
-    build_model.fit(aug_train_ds, validation_data=val_ds, epochs=epochs)
+    model.compile(optimizer=adam,
+                  loss=tf.keras.losses.SparseCategoricalCrossentropy(
+                      from_logits=False),
+                  metrics=["accuracy"])
+    model.fit(train_ds, validation_data=val_ds, epochs=epochs)
 
     """
     # Train model by class

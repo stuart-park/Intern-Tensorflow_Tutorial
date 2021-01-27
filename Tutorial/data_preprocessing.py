@@ -1,6 +1,3 @@
-"""
-Preprocess Data
-"""
 import tensorflow as tf
 import os
 
@@ -35,7 +32,7 @@ class data_preprocessor:
     def _convert_dataset(self, ds):
         converted_ds = ds.map(
             self._process_path, num_parallel_calls=self.AUTOTUNE)
-        
+
         return converted_ds
 
     def _configure_data(self, ds):
