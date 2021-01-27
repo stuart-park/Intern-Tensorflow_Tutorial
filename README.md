@@ -12,8 +12,8 @@
   + data_preprocessor.py : `map()` API를 이용하여 File Path에 대한 데이터를 (Image, Label) 쌍으로 변환, Image의 Rescaling, Performance 향상을 위한 Data configuration 진행.
   + data_augmentation.py : Overfitting 방지를 위한 Augmentation 과정 진행.
   + models.py : Basic Model, Transfer Learning을 위한 Pretrained Model인 VGG16 Model, 필요에 따라 구조가 비슷한 VGG16과 VGG19를 사용하기 위한 class 생성.
-  + train_class.py : Keras내 `fit()` API를 이용하지 않고 `GradientTape()`를 이용하여 한 Batch당 Loss를 확인할 수 있도록 구현.
-  + train_func.py : 위와 동일한 기능을 하지만, `@tf.function`의 class 내 작동 여부 확인을 위해 class가 아닌 function으로 구현.
+  + train_func.py : Keras내 `fit()` API를 이용하지 않고 `GradientTape()`를 이용하여 한 Batch당 Loss를 확인할 수 있도록 구현.
+  + train_class.py : 위와 동일한 기능을 하지만, `@tf.function`의 class 내 작동 여부 확인을 위해 function이 아닌 class로 구현.
   + validate.py : 1 epoch 동안 학습한 모델을 Validate.
   + main.py : 위 Module을 모두 Import하여 Image Classification 과정을 진행.
 
