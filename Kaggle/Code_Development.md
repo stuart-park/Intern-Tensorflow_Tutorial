@@ -15,3 +15,5 @@ Learning Rate Schedule을 위해 ReduceLRonPleatue를 사용했지만 score가 �
 Tensorflow의 CosineDecay와 Pytorch의 CosineAnealingWarmRestart에 대한 내용 확인. 해당 Competition에서 ResneXt50_32x4d가 좋은 결과를 낸다고 하여 해당 모델 논문 확인.
 + **01 / 26 (TUE)** <br>
 새로운 optimizer인 Radam과Lookahead를 같이 사용하였고 scheduler는 그대로 CosineDecay를 사용. 10 epoch 동안 학습을 실시하는데 2 epoch 이후 부터 val_loss가 증가하는데 val_acc도 증가하기 시작하였다. Overfitting인지 아닌지 확인필요.
++ **01 / 27 (WEN)** <br>
+Radam을 이용한 Lookahead optimizer를 사용하였을 때 val_loss가 증가하는데에 val_acc도 증가하기 시작하였음. 해당 model을 이용하여 submit한 결과 score는 0.803정도로 나옴. 때문에 Radam을 사용하지 않고 Adam을 이용한 Lookahead optimizer와 최근에 나온 Adabelief optimizer를 사용하여 모델을 학습시킴.
