@@ -6,7 +6,7 @@
 
 ## Description
 + **Tutorial.ipynb :** Jupyter Notebook을 이용하여 Tensorflow 사이트 내 Image Classification에 대한 Tutorial 진행. 해당 Tutorial에서는 Basic CNN model을 이용하여 Flower 데이터를 학습하고 Overfitting을 피하기 위한 Data Augmentation 진행.    
-+ **Tutorial file :** VSCode를 이용하여 Jupyter Notebook에 작성한 코드를 기능별로 묶는 Modular Programming을 진행하고, 여러 변수들을 용이하게 조절하기 위한 yaml 파일 생성, VGG16을 이용한 Transfer Learning, `GradientTape()`를 이용한 `fit()` API의 구현등을 진행. 
++ **Tutorial file :** VSCode를 이용하여 Jupyter Notebook에 작성한 코드를 기능별로 묶는 Modular Programming을 진행하고, 여러 변수들을 용이하게 조절하기 위한 yaml 파일 생성, VGG16을 이용한 Transfer Learning, `GradientTape()`를 이용한 `fit()` API의 구현 등을 진행. 
   + hyperparameter.yaml: Hyperparameter 값 조절.
   + data_generator.py: Data를 불러와 Train Data와 Validation Data로 split한 후, `map()` API를 이용하여 (Image, Label) 쌍으로 변환. 
   + data_preprocessor.py: [0, 255] 범위의 값들을 신경망 학습을 위해 [0, 1] 범위로 Rescaling 해주고, Performance 향상을 위 Data configuration 진행.
