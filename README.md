@@ -14,8 +14,8 @@
   + models.py: Basic Model과, Transfer Learning을 위해 Pretrained Model인 VGG16 모델을 생성.
   + train_class.py: Keras내 `fit()` API를 이용하지 않고 `GradientTape()`를 이용하여 한 Batch당 Loss를 확인할 수 있도록 구현.
   + train_func.py: 위와 동일한 기능을 하지만, class가 아닌 function으로 구현.
-  + validate.py: 1 epoch동안 학습한 모델을 Validate.
-  + main.py: 위 Module을 모두 Import하여 Image Classification을 진행.
+  + validate.py: 1 epoch 동안 학습한 모델을 Validate.
+  + main.py: 위 Module을 모두 Import하여 Image Classification과정을 진행.
 
 * * *
 
