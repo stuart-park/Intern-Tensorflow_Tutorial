@@ -9,7 +9,7 @@
 + **Tutorial file :** VSCode를 이용하여 Jupyter Notebook에 작성한 코드를 기능별로 묶는 Modular Programming을 진행하고, 여러 변수들을 용이하게 조절하기 위한 yaml 파일 생성, VGG16을 이용한 Transfer Learning, `fit()` API의 customizing 등을 진행. 각 Module에 대한 기능은 아래 같음.
   + hyperparameter.yaml: Hyperparameter 값 조절.
   + data_generator.py: Data를 불러와 Train Data와 Validation Data로 split한 후, `map()` API를 이용하여 (Image, Label) 쌍으로 변환. 
-  + data_preprocessor.py: 0~255 범위의 RGB 값들을 신경망 학습을 위한 Standardize. 또한 Performance 향상을 위한 Data configuration 진행
+  + data_preprocessor.py: [0, 255] 범위의 값들을 신경망 학습을 위해 Standardize 시키고, Performance 향상을 위해 Data configuration 진행
   + data_augmentation.py: Overfitting을 방지하기 위해 데이터를 Augmentate.
   + models.py: 학습을 위한 Basic Model과 Transfer Learning을 위해 Pretrained Model인 VGG16 모델을 생성.
   + train_class.py: Keras내 `fit()` API를 이용하지 않고 직접 class로 customize.
