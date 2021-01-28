@@ -16,15 +16,3 @@
   + train_class.py : 위와 동일한 기능을 하지만, `@tf.function`의 class 내 작동 여부 확인을 위해 function이 아닌 class로 구현.
   + validate.py : 1 epoch 동안 학습한 모델을 Validate.
   + main.py : 위 Module을 모두 Import하여 Image Classification 과정을 진행.
-
-* * *
-
-# Kaggle Competition
-## Overview
-+ **Competition :** Cassava Leaf Diease Classification
-+ **Objective :** Classify each cassava image into four disease categories or a fifth category indicating a healthy leaf
-+ **Evaluation :** Categorization accuracy
-
-## Description
-
-## Results & Improvements
