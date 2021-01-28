@@ -2,7 +2,7 @@
 
 ## Overview
 + Tensorflow 사이트 내 Image Classification Tutorial과 함께, Data Augmentation, Transfer Learning, Keras Guide 등의 Advanced 한 내용에 대한 이해.
-+ 진행할 Kaggle Competition을 위한 Baseline 코드 작성.
++ 진행할 Kaggle Competition인 Cassava Leaf Diease Classification 위한 Baseline 코드 작성.
 
 ## Description
 + **Tutorial_Jupyter :** Jupyter Notebook을 이용하여 Tensorflow 사이트 내 Image Classification에 대한 Tutorial 진행. 본 Tutorial에서는 Basic CNN model을 이용하여 Flower 데이터를 학습하고 Overfitting을 피하기 위한 Data Augmentation 진행.    
