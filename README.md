@@ -1,4 +1,4 @@
-# Tutorial
+# Image Classification Tutorial
 
 ## Overview
 + Tensorflow 사이트 내 Image Classification Tutorial과 함께, Data Augmentation, Transfer Learning, Keras Guide 등의 Advanced 한 내용에 대한 이해.
